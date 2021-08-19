@@ -1,5 +1,6 @@
 basic_moves: []
 special_moves: []
 classes:
-- !include barbarian.yaml
-- !include wizard.yaml
+- !include classes/barbarian.yaml
+- !include classes/wizard.yaml
+tags: !include tags.yaml
