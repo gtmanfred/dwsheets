@@ -5,13 +5,13 @@ items:
 - name: spellbook
   tags:
   - type: weight
-    num: 1
+    modifier: 1
 - name: dungeon rations
   tags:
   - type: uses
-    num: 5
+    modifier: 5
   - type: weight
-    num: 1
+    modifier: 1
 choices:
 - num: 1
   options:
@@ -19,22 +19,22 @@ choices:
     - name: leather armor
       tags:
       - type: armor
-        num: 1
+        modifier: 1
       - type: weight
-        num: 1
+        modifier: 1
   -
     - name: bag of books
       tags:
       - type: uses
-        num: 5
+        modifier: 5
       - type: weight
-        num: 2
+        modifier: 2
     - name: healing potion
       tags:
       - type: quantity
-        num: 3
+        modifier: 3
       - type: weight
-        num: 0
+        modifier: 0
 - num: 1
   options:
   -
@@ -42,30 +42,30 @@ choices:
       tags:
       - type: hand
       - type: weight
-        num: 1
+        modifier: 1
   -
     - name: staff
       tags:
       - type: close
       - type: two-handed
       - type: weight
-        num: 1
+        modifier: 1
 - num: 1
   options:
   -
     - name: healing potions
       tags:
       - type: quantity
-        num: 1
+        modifier: 1
       - type: weight
-        num: 0
+        modifier: 0
   -
     - name: antitoxins
       tags:
       - type: quantity
-        num: 3
+        modifier: 3
       - type: weight
-        num: 0
+        modifier: 0
 bonds:
 - "{name} will play an important role in the events to come. I have foreseen it!"
 - "{name} is keeping an important secret from me."

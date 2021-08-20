@@ -11,6 +11,7 @@ tags:
   duration:
   - ongoing
   - forward
+  - instant
 - type: coins
   modifier: int
   text: How much it costs to buy, normally. If the cost includes “-Charisma” a little negotiation subtracts the haggler’s Charisma score (not modifier) from the price.
@@ -68,3 +69,11 @@ tags:
   text: It’s useful for attacking if you can see the whites of their eyes.
 - type: far
   text: It’s useful for attacking something in shouting distance.
+- type: armor
+  text: It protects you from harm and absorbs damage. When you take damage, subtract your armor from the total. If you have more than one item with n Armor, only the highest value counts.
+- type: armor_modifier
+  text: It protects you and stacks with other armor. Add its value to your total armor.
+  modifier: int
+- type: clumsy
+  text: It’s tough to move around with. -1 ongoing while using it. This penalty is cumulative.
+  modifier: int
