@@ -23,6 +23,7 @@ gear:
     - type: weight
       modifier: 1
   - name: token
+    tags: []
   choices:
   - num: 1
     options:
@@ -218,9 +219,9 @@ moves:
   level: 6
 - name: Kill ‘Em All
   text: |
-    Take another move fromt he Fighter, Bard, or Thief class list.  You may not
+    Take another move from the Fighter, Bard, or Thief class list.  You may not
     take multiclass moves from those classes.
-  type: prereq
+  type: class
   move: advanced
   level: 6
   requires: Appetite for Destruction

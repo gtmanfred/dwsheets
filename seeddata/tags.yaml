@@ -1,6 +1,6 @@
-tags:
 - type: quantity
   text: The amount of this object that a person has.
+  modifier: int
 - type: applied
   text: It’s only useful when carefully applied to a person or to something they eat or drink.
 - type: awkward
@@ -8,7 +8,7 @@ tags:
 - type: bonus
   text: It modifies your effectiveness in a specified situation. It might be “+1 forward to spout lore” or “-1 ongoing to hack and slash.”
   modifier: int
-  duration:
+  options:
   - ongoing
   - forward
   - instant
@@ -20,7 +20,7 @@ tags:
 - type: ration
   text: It’s edible, more or less.
 - type: requires
-  modifier: string
+  modifier: str
   text: It’s only useful to certain people. If you don’t meet the requirements it works poorly, if at all.
 - type: slow
   text: It takes minutes or more to use.
