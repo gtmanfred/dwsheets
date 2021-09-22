@@ -22,43 +22,31 @@ class MoveType(str, Enum):
     advanced: str = 'advanced'
 
 
-class Simple(BaseModel):
+class BaseMove(BaseModel):
+    name: str
+    text: str
+    move: MoveType 
+    level: Optional[int]
+    requires: Optional[str]
+
+
+class Simple(BaseMove):
     type: Literal['simple']
-    name: str
-    text: str
-    move: MoveType 
-    level: Optional[int]
-    requires: Optional[str]
 
 
-class Class(BaseModel):
+class Class(BaseMove):
     type: Literal['class']
-    name: str
-    text: str
-    move: MoveType 
-    level: Optional[int]
-    requires: Optional[str]
     classes: List[str]
 
 
-class Choice(BaseModel):
+class Choice(BaseMove):
     type: Literal['choice']
-    name: str
-    text: str
-    move: MoveType 
-    level: Optional[int]
-    requires: Optional[str]
     num: int
     choices: List[str]
 
 
-class Race(BaseModel):
+class Race(BaseMove):
     type: Literal['race']
-    name: str
-    text: str
-    move: MoveType 
-    level: Optional[int]
-    requires: Optional[str]
 
 
 class Move(BaseModel):
