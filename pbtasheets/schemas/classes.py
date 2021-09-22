@@ -27,4 +27,4 @@ class Class(BaseModel):
     alignment: List[Alignment]
     gear: Gear
     bonds: List[str]
-    #moves: List[Move]
+    moves: List[Move]

@@ -137,6 +137,10 @@ moves:
   type: class
   move: advanced
   level: 2
+  classes:
+  - fighter
+  - bard
+  - thief
 - name: My Love For You Is Like A Truck
   text: |
     When you perform a feat of strength, name someone present whom you have
@@ -193,7 +197,7 @@ moves:
     When you take damage you can choose to take -1 ongoing until you sate one of
     your appetites instead of taking the damage.  If you already have this
     penalty you cannot choose this option.
-  type: simple,
+  type: simple
   move: advanced
   level: 2
 - name: Eye For Weakness
@@ -224,6 +228,10 @@ moves:
   type: class
   move: advanced
   level: 6
+  classes:
+  - fighter
+  - bard
+  - thief
   requires: Appetite for Destruction
 - name: War Cry
   text: |
