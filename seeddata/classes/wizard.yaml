@@ -1,72 +1,76 @@
 name: wizard
+max_health_modifier: 4
+base_damage: d4
+alignment: []
 gear: 
-load: 7
-items:
-- name: spellbook
-  tags:
-  - type: weight
-    modifier: 1
-- name: dungeon rations
-  tags:
-  - type: uses
-    modifier: 5
-  - type: weight
-    modifier: 1
-choices:
-- num: 1
-  options:
-  -
-    - name: leather armor
-      tags:
-      - type: armor
-        modifier: 1
-      - type: weight
-        modifier: 1
-  -
-    - name: bag of books
-      tags:
-      - type: uses
-        modifier: 5
-      - type: weight
-        modifier: 2
-    - name: healing potion
-      tags:
-      - type: quantity
-        modifier: 3
-      - type: weight
-        modifier: 0
-- num: 1
-  options:
-  -
-    - name: dagger
-      tags:
-      - type: hand
-      - type: weight
-        modifier: 1
-  -
-    - name: staff
-      tags:
-      - type: close
-      - type: two-handed
-      - type: weight
-        modifier: 1
-- num: 1
-  options:
-  -
-    - name: healing potions
-      tags:
-      - type: quantity
-        modifier: 1
-      - type: weight
-        modifier: 0
-  -
-    - name: antitoxins
-      tags:
-      - type: quantity
-        modifier: 3
-      - type: weight
-        modifier: 0
+  load: 7
+  items:
+  - name: spellbook
+    tags:
+    - type: weight
+      modifier: 1
+  - name: dungeon rations
+    tags:
+    - type: uses
+      modifier: 5
+    - type: weight
+      modifier: 1
+  choices:
+  - num: 1
+    options:
+    -
+      - name: leather armor
+        tags:
+        - type: armor
+          modifier: 1
+        - type: weight
+          modifier: 1
+    -
+      - name: bag of books
+        tags:
+        - type: uses
+          modifier: 5
+        - type: weight
+          modifier: 2
+      - name: healing potion
+        tags:
+        - type: quantity
+          modifier: 3
+        - type: weight
+          modifier: 0
+  - num: 1
+    options:
+    -
+      - name: dagger
+        tags:
+        - type: hand
+        - type: weight
+          modifier: 1
+    -
+      - name: staff
+        tags:
+        - type: close
+        - type: two-handed
+        - type: weight
+          modifier: 1
+  - num: 1
+    options:
+    -
+      - name: healing potions
+        tags:
+        - type: quantity
+          modifier: 1
+        - type: weight
+          modifier: 0
+    -
+      - name: antitoxins
+        tags:
+        - type: quantity
+          modifier: 3
+        - type: weight
+          modifier: 0
 bonds:
 - "{name} will play an important role in the events to come. I have foreseen it!"
 - "{name} is keeping an important secret from me."
 - "{name} is woefully misinformed about the world; I will teach them all that I can."
+moves: []
