@@ -74,3 +74,6 @@ bonds:
 - "{name} is keeping an important secret from me."
 - "{name} is woefully misinformed about the world; I will teach them all that I can."
 moves: []
+spells:
+  type: learned
+  spell_list: []
