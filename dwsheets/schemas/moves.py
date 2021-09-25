@@ -14,14 +14,14 @@ class SelectType(str, Enum):
     cls: str = 'class'
     choice: str = 'choice'
     race: str = 'race'
-    basic: str = 'basic'
-    special: str = 'special'
 
 
 class MoveType(str, Enum):
     choice: str = 'choice'
     starting: str = 'starting'
     advanced: str = 'advanced'
+    basic: str = 'basic'
+    special: str = 'special'
 
 
 class BaseMove(BaseModel):
