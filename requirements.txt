@@ -1,0 +1,3 @@
+git+git://github.com/PrettyWood/pydantic.git@f/discriminated-union#egg=pydantic
+pyyaml
+sqlmodel
