@@ -35,7 +35,7 @@ def create_app(debug=False):
     app.mount(
         '/ui',
         fastapi.staticfiles.StaticFiles(
-            directory='dwsheets/static/',
+            directory='dwsheets/react/',
             html=True,
             check_dir=False,
         )
