@@ -7,3 +7,5 @@ class Configuration(metaclass=figenv.MetaConfig):
     ALLOW_ORIGIN = ['dwsheets.app']
 
     DEBUG = False
+
+    SQLALCHEMY_DATABASE_URI = 'sqlite+aiosqlite:///database.db'

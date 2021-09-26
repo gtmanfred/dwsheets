@@ -1,4 +1,5 @@
 git+git://github.com/PrettyWood/pydantic.git@f/discriminated-union#egg=pydantic
+git+git://github.com/andrewbolster/sqlmodel@patch-1#egg=sqlmodel
 pyyaml
 sqlmodel
 fastapi
@@ -6,3 +7,5 @@ aiofiles
 python-socketio
 uvicorn
 figenv
+aiosqlite
+sqlalchemy[asyncio]

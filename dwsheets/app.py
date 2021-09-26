@@ -1,8 +1,10 @@
 import fastapi.staticfiles
 import socketio
 from fastapi.responses import RedirectResponse
+from sqlmodel import create_engine
 
 from . import __version__
+from .database import engine
 from .config import Configuration as config
 from .socketio import sio
 from .utils.loader import load_handlers

@@ -27,11 +27,9 @@ for cls in srd['classes']:
         mv = dwsheets.models.moves.Move(
             move=move.__root__.dict(),
             name=move.__root__.name,
-            type=move.__root__.type,
+            type=move.__root__.move,
             class_uid=cls.uid,
         )
-        if mv.type is None:
-            mv.type = move.__root__.type
         session.add(mv)
     if c.spells is not None:
         for spell in c.spells.spell_list:
