@@ -25,9 +25,9 @@ for cls in srd['classes']:
     session.add(cls)
     for move in c.moves:
         mv = dwsheets.models.moves.Move(
-            move=move.__root__.dict(),
-            name=move.__root__.name,
-            type=move.__root__.move,
+            move=move.dict(),
+            name=move.name,
+            type=move.move,
             class_uid=cls.uid,
         )
         session.add(mv)

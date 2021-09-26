@@ -1,11 +1,11 @@
 from enum import Enum
+from typing import Annotated
 from typing import List
 from typing import Literal
 from typing import Optional
 from typing import Union
 
 from pydantic import BaseModel
-from pydantic.errors import NumberNotGeError
 from pydantic.fields import Field
 
 
@@ -27,7 +27,7 @@ class MoveType(str, Enum):
 class BaseMove(BaseModel):
     name: str
     text: str
-    move: MoveType 
+    move: MoveType
     level: Optional[int]
     requires: Optional[str]
 
@@ -51,5 +51,7 @@ class Race(BaseMove):
     type: Literal['race']
 
 
-class Move(BaseModel):
-    __root__: Union[Simple, Class, Choice, Race] = Field(discriminator='type')
+Move = Annotated[
+    Union[tuple(BaseMove.__subclasses__())],
+    Field(discriminator='type'),
+]

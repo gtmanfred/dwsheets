@@ -31,7 +31,7 @@ class Spells(BaseModel):
 class Class(BaseModel):
     name: str
     max_health_modifier: int
-    base_damage: constr(regex='^d\d+')
+    base_damage: constr(regex=r'^d\d+$')  # noqa
     alignment: List[Alignment]
     gear: Gear
     bonds: List[str]

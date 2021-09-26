@@ -1,10 +1,9 @@
 import fastapi.staticfiles
 import socketio
 from fastapi.responses import RedirectResponse
-from sqlmodel import create_engine
 
 from . import __version__
-from .database import engine
+from .database import create_engine
 from .config import Configuration as config
 from .socketio import sio
 from .utils.loader import load_handlers
@@ -44,6 +43,7 @@ def create_app(debug=False):
     )
     app.get('/')(redirect_to_ui)
     app.get('/health')(healthcheck)
+    app.state.engine = create_engine()
 
     load_handlers(app)
 

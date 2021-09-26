@@ -49,7 +49,10 @@ def load_handlers(app: fastapi.FastAPI):
         if not version_dir.is_dir():
             continue
         version = version_dir.name
-        finder = importlib.machinery.FileFinder(str(version_dir), *loader_details)
+        finder = importlib.machinery.FileFinder(
+            str(version_dir),
+            *loader_details,
+        )
 
         for entry in version_dir.iterdir():
             if entry.name in ('__init__.py', ):
