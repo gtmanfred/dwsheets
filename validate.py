@@ -6,11 +6,9 @@ from dwsheets.schemas.classes import Class
 from seeddata import srd
 
 import dwsheets.models
+from dwsheets.config import Configuration as config
 
-sqlite_file_name = "database.db"
-sqlite_url = f"sqlite:///{sqlite_file_name}"
-
-engine = create_engine(sqlite_url, echo=True)
+engine = create_engine(config.DATABASE_URI, echo=True)
 SQLModel.metadata.create_all(engine)
 
 
@@ -39,4 +37,15 @@ for cls in srd['classes']:
                 class_uid=cls.uid,
             ))
     session.commit()
+
+
+user = dwsheets.models.users.User(**{
+    'username': 'test-user',
+    'email': 'example@gmail.com',
+    'password': b'$2b$12$cXtw/OImduJVjONbFb3POuG/sSFNQ8MDdkmUSCcJvFTEwRmc7DTXu',
+    'disabled': False,
+    'name': 'Example User',
+})
+session.add(user)
+session.commit()
 session.close()

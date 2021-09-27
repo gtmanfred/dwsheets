@@ -2,6 +2,7 @@ import uuid
 from typing import Dict
 from typing import TYPE_CHECKING
 from typing import Optional
+from sqlalchemy.orm import lazyload
 
 from sqlmodel import Column
 from sqlmodel import Enum

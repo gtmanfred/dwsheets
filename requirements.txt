@@ -1,4 +1,4 @@
-git+git://github.com/PrettyWood/pydantic.git@f/discriminated-union#egg=pydantic
+git+git://github.com/PrettyWood/pydantic.git@f/discriminated-union#egg=pydantic[email]
 git+git://github.com/andrewbolster/sqlmodel@patch-1#egg=sqlmodel
 pyyaml
 sqlmodel
@@ -7,5 +7,8 @@ aiofiles
 python-socketio
 uvicorn
 figenv
-aiosqlite
-sqlalchemy[asyncio]
+sqlalchemy
+databases[sqlite]
+passlib[bcrypt]
+python-jose
+python-multipart
