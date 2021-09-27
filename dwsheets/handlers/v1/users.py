@@ -4,12 +4,14 @@ from fastapi import APIRouter
 from fastapi import Depends
 from fastapi import HTTPException
 from fastapi.security import OAuth2PasswordRequestForm
+from sqlmodel import or_
 from sqlmodel import select
 
 from dwsheets.config import Configuration as config
 from dwsheets.database import db
 from dwsheets.models.users import User
 from dwsheets.schemas.users import User as UserSchema
+from dwsheets.schemas.users import LoginUser
 from dwsheets.schemas.tokens import Token
 from dwsheets.security import pwd_context
 from dwsheets.security import create_access_token
@@ -19,9 +21,20 @@ router = APIRouter()
 
 
 @router.post('/token', response_model=Token)
-async def login(form_data: OAuth2PasswordRequestForm = Depends()):
-    user = await db.fetch_one(select(User).where(User.username == form_data.username))
-    if not user or not pwd_context.verify(form_data.password, user.password):
+async def oauth_login(form_data: OAuth2PasswordRequestForm = Depends()):
+    return await login(form_data)
+
+
+@router.post('/login', response_model=Token)
+async def login(user: LoginUser):
+    dbuser = await db.fetch_one(
+        select(User).where(
+            or_(
+                User.username == user.username,
+                User.email == user.username,
+            )
+        ))
+    if not user or not pwd_context.verify(user.password, dbuser.password):
         raise HTTPException(
             status_code=400,
             detail='Incorrect username or password',
